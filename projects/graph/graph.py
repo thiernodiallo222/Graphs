@@ -17,13 +17,13 @@ class Graph:
             self.vertices[vertex_id]=set()
 
 
-    def add_edge(self, v1, v2):
+    def add_edge(self, V1, V2):
         """
         Add a directed edge to the graph.
         """
          # Find vertex V1 in our vertices, add V2 to the set of edges
-         if V1 in self.vertices and V2 in self.vertices:
-             self.vertices[V1].add(V2)
+        if V1 in self.vertices and V2 in self.vertices:
+            self.vertices[V1].add(V2)
 
 
     def get_neighbors(self, vertex_id):
@@ -45,21 +45,24 @@ class Graph:
         # while the queue is not empty:
         # while myQueue.size() > 0:
         while myQueue:
-            
-          # get current vertex (dequeue from queue)
+            # get current vertex (dequeue from queue)
             current_vertex=myQueue.dequeue() 
 
             # Check if the current vertex has not been visited:
             if current_vertex not in visited:
-
-                # print the current vertex
-                print(current_vertex)
-        # Mark the current vertex as visited/#Add the current vertex to a visited_set
-                visited.add(current_vertex)
-                myQueue.enqueue(current_vertex.)
+             
+               # print the current vertex
+                print(current_vertex, end=" ")
+             
                 # queue up all the current vertex's neighbors (so we can visit them next)
-                for item in current_vertex:
+                # neighbors = self.get_neighbors(current_vertex)
+                
+                for item in self.get_neighbors(current_vertex):
                     myQueue.enqueue(item)
+                
+                 # Mark the current vertex as visited/#Add the current vertex to a visited_set
+                visited.add(current_vertex)
+
 
 
         
@@ -77,18 +80,23 @@ class Graph:
 
         # while the stack is not empty:
         while myStack:
-         # get current vertex (pop from stack)
+            # get current vertex (pop from stack)
             current_vertex=myStack.pop()
-        # Check if the current vertex has not been visited
-            if current_vertex in visited:
+            # Check if the current vertex has not been visited
+            if current_vertex not in visited:
+           
                 # print the current vertex
-                print(current_vertex)
+                print(current_vertex, end=" ")
                 # Mark the current vertex as visited
                 visited.add(current_vertex)
-                    # Add the current vertex to a visited_set
+                
+                # Add the current vertex to a visited_set
                 # push up all the current vertex's neighbors (so we can visit them next
-                for el in current_vertex:
-                    myStack.push(el)
+               
+                for item in self.get_neighbors(current_vertex):
+                    myStack.push(item)
+               
+                
         
 
     def dft_recursive(self, starting_vertex):
