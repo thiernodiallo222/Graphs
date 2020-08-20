@@ -44,7 +44,7 @@ class Graph:
         myQueue.enqueue(starting_vertex)
         # while the queue is not empty:
         # while myQueue.size() > 0:
-        while myQueue:
+        while myQueue.size()>0:
             # get current vertex (dequeue from queue)
             current_vertex=myQueue.dequeue() 
 
@@ -52,7 +52,7 @@ class Graph:
             if current_vertex not in visited:
              
                # print the current vertex
-                print(current_vertex, end=" ")
+                print(current_vertex)
              
                 # queue up all the current vertex's neighbors (so we can visit them next)
                 # neighbors = self.get_neighbors(current_vertex)
@@ -79,14 +79,14 @@ class Graph:
         visited=set()
 
         # while the stack is not empty:
-        while myStack:
+        while myStack.size()>0:
             # get current vertex (pop from stack)
             current_vertex=myStack.pop()
             # Check if the current vertex has not been visited
             if current_vertex not in visited:
            
                 # print the current vertex
-                print(current_vertex, end=" ")
+                print(current_vertex)
                 # Mark the current vertex as visited
                 visited.add(current_vertex)
                 
