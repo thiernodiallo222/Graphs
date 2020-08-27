@@ -15,7 +15,7 @@ def earliest_ancestor(ancestors, starting_node):
     path.append(starting_node)
     terminating_path=[]
     
-    while len(path)> 0:
+    while len(path) >0:
         current_path = path.pop()
         vertex = current_path[-1]
         if vertex not in visited:
