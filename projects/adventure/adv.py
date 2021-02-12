@@ -58,5 +58,5 @@ while True:
         player.travel(cmds[0], True)
     elif cmds[0] == "q":
         break
-    else:
+    else: 
         print("I did not understand that command.")
